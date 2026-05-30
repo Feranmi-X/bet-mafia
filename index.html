@@ -1,0 +1,1471 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIP Picks | Exclusive Sports Betting Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #ffd700;
+        --gold-dark: #b8960c;
+        --green: #00ff7f;
+        --red: #ff4444;
+        --bg: #090c10;
+        --card: #0f1419;
+        --card2: #151c24;
+        --border: #1e2d3d;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Barlow", sans-serif;
+        background-color: var(--bg);
+        color: #e8edf2;
+        overflow-x: hidden;
+      }
+
+      .font-bebas {
+        font-family: "Bebas Neue", cursive;
+      }
+      .font-condensed {
+        font-family: "Barlow Condensed", sans-serif;
+      }
+
+      /* Animated grid background */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* Gold gradient glow */
+      .hero-glow {
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 700px;
+        height: 400px;
+        background: radial-gradient(
+          ellipse,
+          rgba(255, 215, 0, 0.12) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      /* Ticker bar */
+      .ticker-wrap {
+        overflow: hidden;
+        background: var(--gold);
+      }
+      .ticker {
+        display: flex;
+        gap: 60px;
+        animation: ticker 22s linear infinite;
+        white-space: nowrap;
+      }
+      @keyframes ticker {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      .ticker:hover {
+        animation-play-state: paused;
+      }
+
+      /* Cards */
+      .plan-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        transition:
+          transform 0.25s,
+          border-color 0.25s,
+          box-shadow 0.25s;
+        position: relative;
+        overflow: hidden;
+      }
+      .plan-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 215, 0, 0.06) 0%,
+          transparent 60%
+        );
+        opacity: 0;
+        transition: opacity 0.25s;
+      }
+      .plan-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--gold-dark);
+        box-shadow: 0 12px 40px rgba(255, 215, 0, 0.12);
+      }
+      .plan-card:hover::before {
+        opacity: 1;
+      }
+      .plan-card.featured {
+        border-color: var(--gold);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+      }
+
+      /* Buttons */
+      .btn-gold {
+        background: linear-gradient(135deg, #ffd700, #b8960c);
+        color: #000;
+        font-weight: 700;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 1rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-gold::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.25),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(255, 215, 0, 0.4);
+      }
+      .btn-gold:hover::after {
+        opacity: 1;
+      }
+      .btn-gold:active {
+        transform: translateY(0);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--gold);
+        border: 1.5px solid var(--gold);
+        font-weight: 700;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 1rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-radius: 8px;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .btn-outline:hover {
+        background: var(--gold);
+        color: #000;
+      }
+
+      /* Book badges */
+      .book-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--card2);
+        border: 1px solid var(--border);
+        border-radius: 100px;
+        padding: 5px 14px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        font-family: "Barlow Condensed", sans-serif;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+        cursor: default;
+      }
+      .book-badge:hover {
+        border-color: var(--gold);
+        background: rgba(255, 215, 0, 0.05);
+      }
+
+      /* Review stars */
+      .star {
+        color: var(--gold);
+      }
+
+      /* Win rate bar */
+      .win-bar-bg {
+        background: var(--border);
+        border-radius: 100px;
+        height: 6px;
+      }
+      .win-bar-fill {
+        background: linear-gradient(90deg, #00ff7f, #00cc66);
+        border-radius: 100px;
+        height: 6px;
+        transition: width 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      /* Modal */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.82);
+        backdrop-filter: blur(6px);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s;
+      }
+      .modal-overlay.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .modal-box {
+        background: var(--card);
+        border: 1px solid var(--gold-dark);
+        border-radius: 16px;
+        max-width: 480px;
+        width: 92%;
+        padding: 36px 32px;
+        position: relative;
+        transform: scale(0.93);
+        transition: transform 0.25s;
+      }
+      .modal-overlay.open .modal-box {
+        transform: scale(1);
+      }
+
+      /* Toast */
+      .toast {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        background: var(--card2);
+        border: 1px solid var(--gold);
+        border-radius: 10px;
+        padding: 14px 22px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 1rem;
+        letter-spacing: 0.04em;
+        color: var(--gold);
+        z-index: 9999;
+        transform: translateY(80px);
+        opacity: 0;
+        transition:
+          transform 0.3s,
+          opacity 0.3s;
+      }
+      .toast.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      /* Scroll reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.6s,
+          transform 0.6s;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Nav */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(9, 12, 16, 0.88);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section-label {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      /* Mobile menu */
+      #mobile-menu {
+        display: none;
+      }
+      #mobile-menu.open {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOAST -->
+    <div class="toast" id="toast">✅ Copied to clipboard!</div>
+
+    <!-- NAV -->
+    <nav>
+      <div
+        class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between relative z-10"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="w-8 h-8 rounded-full flex items-center justify-center"
+            style="background: linear-gradient(135deg, #ffd700, #b8960c)"
+          >
+            <img
+              src="/image/WhatsApp Image 2026-05-30 at 2.42.17 PM.jpeg"
+              class="rounded-xl"
+              alt=""
+            />
+          </div>
+          <span
+            class="font-bebas text-2xl tracking-wider"
+            style="color: var(--gold)"
+            >BET MAFIA</span
+          >
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+          <a href="#plans" class="hover:text-yellow-400 transition-colors"
+            >Plans</a
+          >
+          <a href="#books" class="hover:text-yellow-400 transition-colors"
+            >Books</a
+          >
+          <a href="#reviews" class="hover:text-yellow-400 transition-colors"
+            >Reviews</a
+          >
+          <a href="#pay" class="hover:text-yellow-400 transition-colors"
+            >Payment</a
+          >
+        </div>
+        <button
+          class="btn-gold px-5 py-2 hidden md:block"
+          onclick="openModal('main')"
+        >
+          Join VIP Now
+        </button>
+        <!-- Hamburger -->
+        <button
+          class="md:hidden text-white"
+          id="hamburger"
+          onclick="toggleMobileMenu()"
+        >
+          <svg
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M3 12h18M3 6h18M3 18h18" />
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="flex-col gap-4 px-4 pb-4 text-sm font-semibold md:hidden"
+      >
+        <a
+          href="#plans"
+          onclick="toggleMobileMenu()"
+          class="block hover:text-yellow-400"
+          >Plans</a
+        >
+        <a
+          href="#books"
+          onclick="toggleMobileMenu()"
+          class="block hover:text-yellow-400"
+          >Books</a
+        >
+        <a
+          href="#reviews"
+          onclick="toggleMobileMenu()"
+          class="block hover:text-yellow-400"
+          >Reviews</a
+        >
+        <a
+          href="#pay"
+          onclick="toggleMobileMenu()"
+          class="block hover:text-yellow-400"
+          >Payment</a
+        >
+        <button class="btn-gold w-full py-2" onclick="openModal('main')">
+          Join MAFIA VIP Now
+        </button>
+      </div>
+    </nav>
+
+    <!-- TICKER -->
+    <div class="ticker-wrap py-1.5">
+      <div
+        class="ticker font-condensed font-bold text-sm tracking-widest text-black"
+        id="ticker-inner"
+      >
+        <span>🏆 LAST PICK: +$840</span>
+        <span>🔥 WIN STREAK: 9</span>
+        <span>⚡ NBA PARLAY HIT</span>
+        <span>💰 7-LEG PARLAY +$2,200</span>
+        <span>✅ 74% WIN RATE THIS MONTH</span>
+        <span>🏈 NFL MONEYLINE CASH</span>
+        <span>🎯 UFC PROP HIT</span>
+        <span>🏀 NBA PLAYER PROP LOCKED</span>
+        <span>🏆 LAST PICK: +$840</span>
+        <span>🔥 WIN STREAK: 9</span>
+        <span>⚡ NBA PARLAY HIT</span>
+        <span>💰 7-LEG PARLAY +$2,200</span>
+        <span>✅ 74% WIN RATE THIS MONTH</span>
+        <span>🏈 NFL MONEYLINE CASH</span>
+        <span>🎯 UFC PROP HIT</span>
+        <span>🏀 NBA PLAYER PROP LOCKED</span>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="relative pt-24 pb-20 px-4 text-center overflow-hidden">
+      <div class="hero-glow"></div>
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <div class="section-label mb-4">Exclusive Access</div>
+        <h1
+          class="font-bebas text-7xl md:text-9xl leading-none mb-4"
+          style="
+            color: var(--gold);
+            text-shadow: 0 0 60px rgba(255, 215, 0, 0.3);
+          "
+        >
+          BET MAFIA
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-3 font-semibold">
+          Premium Sports Betting Intelligence
+        </p>
+        <p class="text-gray-400 max-w-xl mx-auto mb-8 leading-relaxed">
+          Get access to my exclusive picks posted openly in the VIP group —
+          covering every major sportsbook with massive odds. No guesswork, just
+          results.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+          <div
+            class="flex items-center gap-2 bg-green-900/30 border border-green-700/50 rounded-full px-4 py-2 text-green-400 text-sm font-semibold"
+          >
+            <span>●</span> 74% Monthly Win Rate
+          </div>
+          <div
+            class="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
+            style="
+              background: rgba(255, 215, 0, 0.1);
+              border: 1px solid rgba(255, 215, 0, 0.3);
+              color: var(--gold);
+            "
+          >
+            👑 500+ Active Members
+          </div>
+          <div
+            class="flex items-center gap-2 bg-blue-900/30 border border-blue-700/50 rounded-full px-4 py-2 text-blue-300 text-sm font-semibold"
+          >
+            ⚡ Picks Posted Daily
+          </div>
+        </div>
+        <button class="btn-gold text-lg px-10 py-4" onclick="openModal('main')">
+          🔐 Subscribe to MAFIA VIP
+        </button>
+      </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section
+      class="py-8 px-4"
+      style="
+        background: var(--card);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      "
+    >
+      <div
+        class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+      >
+        <div>
+          <div
+            class="font-bebas text-4xl md:text-5xl"
+            style="color: var(--gold)"
+          >
+            92%
+          </div>
+          <div
+            class="text-gray-400 text-sm mt-1 font-condensed font-bold tracking-widest uppercase"
+          >
+            Win Rate
+          </div>
+        </div>
+        <div>
+          <div
+            class="font-bebas text-4xl md:text-5xl"
+            style="color: var(--green)"
+          >
+            20+
+          </div>
+          <div
+            class="text-gray-400 text-sm mt-1 font-condensed font-bold tracking-widest uppercase"
+          >
+            Win Streak
+          </div>
+        </div>
+        <div>
+          <div class="font-bebas text-4xl md:text-5xl text-white">10</div>
+          <div
+            class="text-gray-400 text-sm mt-1 font-condensed font-bold tracking-widest uppercase"
+          >
+            Sportsbooks
+          </div>
+        </div>
+        <div>
+          <div class="font-bebas text-4xl md:text-5xl text-white">500+</div>
+          <div
+            class="text-gray-400 text-sm mt-1 font-condensed font-bold tracking-widest uppercase"
+          >
+            VIP Members
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="plans" class="py-20 px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-14 reveal">
+          <div class="section-label mb-3">Membership Plans</div>
+          <h2 class="font-bebas text-5xl md:text-6xl">Choose Your Plan</h2>
+          <p class="text-gray-400 mt-3">
+            Pick the plan that fits your grind. Cancel anytime.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- 4-Day -->
+          <div class="plan-card p-7 reveal">
+            <div
+              class="font-condensed font-bold tracking-widest uppercase text-gray-400 text-xs mb-4"
+            >
+              Trial Access
+            </div>
+            <div class="font-bebas text-6xl mb-1" style="color: var(--gold)">
+              $50
+            </div>
+            <div class="text-gray-400 text-sm mb-6">4 Days Access</div>
+            <ul class="space-y-3 text-sm mb-8">
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> All VIP picks for 4
+                days
+              </li>
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> All 10 sportsbooks
+                covered
+              </li>
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> Massive odds plays
+              </li>
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> Instant group access
+              </li>
+            </ul>
+            <button class="btn-gold w-full py-3" onclick="openModal('4day')">
+              Get 4-Day Access
+            </button>
+          </div>
+
+          <!-- Weekly — FEATURED -->
+          <div
+            class="plan-card featured p-7 reveal"
+            style="transform: scale(1.02)"
+          >
+            <div
+              class="absolute top-4 right-4 font-condensed font-black text-xs tracking-widest uppercase rounded-full px-3 py-1"
+              style="background: var(--gold); color: #000"
+            >
+              Most Popular
+            </div>
+            <div
+              class="font-condensed font-bold tracking-widest uppercase text-yellow-400 text-xs mb-4"
+            >
+              Best Value
+            </div>
+            <div class="font-bebas text-6xl mb-1" style="color: var(--gold)">
+              $100
+            </div>
+            <div class="text-gray-400 text-sm mb-6">Weekly Access</div>
+            <ul class="space-y-3 text-sm mb-8">
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> Full 7 days of VIP
+                picks
+              </li>
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> All 10 sportsbooks
+                covered
+              </li>
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> Parlays + player
+                props
+              </li>
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> Priority chat support
+              </li>
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> Instant group access
+              </li>
+            </ul>
+            <button class="btn-gold w-full py-3" onclick="openModal('weekly')">
+              Get Weekly Access
+            </button>
+          </div>
+
+          <!-- Monthly -->
+          <div class="plan-card p-7 reveal">
+            <div
+              class="font-condensed font-bold tracking-widest uppercase text-gray-400 text-xs mb-4"
+            >
+              Full Month
+            </div>
+            <div class="font-bebas text-6xl mb-1" style="color: var(--gold)">
+              $200
+            </div>
+            <div class="text-gray-400 text-sm mb-6">Monthly Access</div>
+            <ul class="space-y-3 text-sm mb-8">
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> 30 days of VIP picks
+              </li>
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> All 10 sportsbooks
+                covered
+              </li>
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> Exclusive high-odd
+                plays
+              </li>
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> 1-on-1 pick
+                breakdowns
+              </li>
+              <li class="flex items-center gap-2">
+                <span style="color: var(--green)">✓</span> VIP inner circle
+                group
+              </li>
+            </ul>
+            <button class="btn-gold w-full py-3" onclick="openModal('monthly')">
+              Get Monthly Access
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPORTSBOOKS -->
+    <section
+      id="books"
+      class="py-20 px-4"
+      style="
+        background: var(--card);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      "
+    >
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <div class="section-label mb-3">Where I Play</div>
+          <h2 class="font-bebas text-5xl md:text-6xl">Sportsbooks Covered</h2>
+          <p class="text-gray-400 mt-3">
+            I post picks for every major platform. You pick which one you use.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3 reveal">
+          <span class="book-badge">🟢 Bovada</span>
+          <span class="book-badge">🟣 Underdog</span>
+          <span class="book-badge">🔵 PrizePicks</span>
+          <span class="book-badge">⚫ Chalkboard</span>
+          <span class="book-badge">🔴 Hard Rock Bet</span>
+          <span class="book-badge">🟡 Fliff</span>
+          <span class="book-badge">🟢 DraftKings</span>
+          <span class="book-badge">🔵 Bet365</span>
+          <span class="book-badge">🟠 FanDuel</span>
+          <span class="book-badge">💜 BetMGM</span>
+        </div>
+
+        <!-- Book win rates -->
+        <div class="mt-12 grid md:grid-cols-2 gap-5 reveal">
+          <div
+            style="
+              background: var(--card2);
+              border: 1px solid var(--border);
+              border-radius: 10px;
+              padding: 20px;
+            "
+          >
+            <div class="flex justify-between mb-2 text-sm font-semibold">
+              <span>DraftKings</span
+              ><span style="color: var(--green)">78%</span>
+            </div>
+            <div class="win-bar-bg">
+              <div class="win-bar-fill" data-width="78"></div>
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--card2);
+              border: 1px solid var(--border);
+              border-radius: 10px;
+              padding: 20px;
+            "
+          >
+            <div class="flex justify-between mb-2 text-sm font-semibold">
+              <span>FanDuel</span><span style="color: var(--green)">76%</span>
+            </div>
+            <div class="win-bar-bg">
+              <div class="win-bar-fill" data-width="76"></div>
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--card2);
+              border: 1px solid var(--border);
+              border-radius: 10px;
+              padding: 20px;
+            "
+          >
+            <div class="flex justify-between mb-2 text-sm font-semibold">
+              <span>PrizePicks</span
+              ><span style="color: var(--green)">80%</span>
+            </div>
+            <div class="win-bar-bg">
+              <div class="win-bar-fill" data-width="80"></div>
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--card2);
+              border: 1px solid var(--border);
+              border-radius: 10px;
+              padding: 20px;
+            "
+          >
+            <div class="flex justify-between mb-2 text-sm font-semibold">
+              <span>Bovada</span><span style="color: var(--green)">71%</span>
+            </div>
+            <div class="win-bar-bg">
+              <div class="win-bar-fill" data-width="71"></div>
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--card2);
+              border: 1px solid var(--border);
+              border-radius: 10px;
+              padding: 20px;
+            "
+          >
+            <div class="flex justify-between mb-2 text-sm font-semibold">
+              <span>BetMGM</span><span style="color: var(--green)">73%</span>
+            </div>
+            <div class="win-bar-bg">
+              <div class="win-bar-fill" data-width="73"></div>
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--card2);
+              border: 1px solid var(--border);
+              border-radius: 10px;
+              padding: 20px;
+            "
+          >
+            <div class="flex justify-between mb-2 text-sm font-semibold">
+              <span>Bet365</span><span style="color: var(--green)">75%</span>
+            </div>
+            <div class="win-bar-bg">
+              <div class="win-bar-fill" data-width="75"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAYMENT METHODS -->
+    <section id="pay" class="py-20 px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <div class="section-label mb-3">Payment Options</div>
+          <h2 class="font-bebas text-5xl md:text-6xl">How to Pay</h2>
+          <p class="text-gray-400 mt-3">
+            Fast, secure, and easy. Choose your preferred method.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div
+            class="plan-card p-7 text-center reveal cursor-pointer"
+            onclick="copyPayment('Bitcoin')"
+          >
+            <div class="text-5xl mb-4">₿</div>
+            <div class="font-bebas text-2xl mb-2" style="color: var(--gold)">
+              Bitcoin
+            </div>
+            <p class="text-gray-400 text-sm mb-4">
+              Fast & anonymous crypto payments accepted
+            </p>
+            <button class="btn-outline w-full py-2 text-sm">
+              Copy BTC Address
+            </button>
+          </div>
+
+          <div
+            class="plan-card p-7 text-center reveal cursor-pointer"
+            onclick="copyPayment('Apple Pay')"
+          >
+            <div class="text-5xl mb-4">🍎</div>
+            <div class="font-bebas text-2xl mb-2" style="color: var(--gold)">
+              Apple Pay
+            </div>
+            <p class="text-gray-400 text-sm mb-4">
+              Tap to pay instantly from your iPhone or Mac
+            </p>
+            <button class="btn-outline w-full py-2 text-sm">
+              Get Apple Pay Info
+            </button>
+          </div>
+
+          <div
+            class="plan-card p-7 text-center reveal cursor-pointer"
+            onclick="copyPayment('Chime')"
+          >
+            <div class="text-5xl mb-4">💚</div>
+            <div class="font-bebas text-2xl mb-2" style="color: var(--gold)">
+              Chime
+            </div>
+            <p class="text-gray-400 text-sm mb-4">
+              Send directly via Chime — quick and easy
+            </p>
+            <button class="btn-outline w-full py-2 text-sm">
+              Get Chime Tag
+            </button>
+          </div>
+        </div>
+        <p class="text-center text-gray-500 text-sm mt-6">
+          After payment, DM your receipt and you'll be added to the VIP group
+          within minutes.
+        </p>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section
+      id="reviews"
+      class="py-20 px-4"
+      style="
+        background: var(--card);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      "
+    >
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <div class="section-label mb-3">Member Reviews</div>
+          <h2 class="font-bebas text-5xl md:text-6xl">What VIPs Are Saying</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-5" id="reviews-grid">
+          <div class="plan-card p-6 reveal">
+            <div class="flex mb-3">
+              <span class="star">★★★★★</span>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              "Joined for the weekly plan and hit a 6-leg parlay on DraftKings
+              my first day in. This group is no joke. Already renewed monthly."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center font-bebas text-lg"
+                style="
+                  background: linear-gradient(135deg, #ffd700, #b8960c);
+                  color: #000;
+                "
+              >
+                J
+              </div>
+              <div>
+                <div class="font-semibold text-sm">JayMoney_88</div>
+                <div class="text-xs text-gray-500">
+                  FanDuel &amp; DraftKings
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-card p-6 reveal">
+            <div class="flex mb-3">
+              <span class="star">★★★★★</span>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              "PrizePicks picks have been insane. 4 out of 5 goblin plays hit
+              this week. Turned $200 into $1,800. These odds are real."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center font-bebas text-lg"
+                style="
+                  background: linear-gradient(135deg, #ffd700, #b8960c);
+                  color: #000;
+                "
+              >
+                T
+              </div>
+              <div>
+                <div class="font-semibold text-sm">TrapTrendsUp</div>
+                <div class="text-xs text-gray-500">PrizePicks Pro</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-card p-6 reveal">
+            <div class="flex mb-3">
+              <span class="star">★★★★★</span>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              "Was skeptical at first but the $50 trial convinced me. Hit 3
+              straight days on Bovada. Moved to monthly without thinking twice."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center font-bebas text-lg"
+                style="
+                  background: linear-gradient(135deg, #ffd700, #b8960c);
+                  color: #000;
+                "
+              >
+                K
+              </div>
+              <div>
+                <div class="font-semibold text-sm">KingBettor_21</div>
+                <div class="text-xs text-gray-500">Bovada Member</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-card p-6 reveal">
+            <div class="flex mb-3">
+              <span class="star">★★★★★</span>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              "Underdog picks are crazy accurate. Hit a 5-pick power play +$960.
+              This capper knows what he's doing. Group is real and active."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center font-bebas text-lg"
+                style="
+                  background: linear-gradient(135deg, #00ff7f, #00cc66);
+                  color: #000;
+                "
+              >
+                D
+              </div>
+              <div>
+                <div class="font-semibold text-sm">DeepCuts_D</div>
+                <div class="text-xs text-gray-500">Underdog Fantasy</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-card p-6 reveal">
+            <div class="flex mb-3">
+              <span class="star">★★★★★</span>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              "BetMGM moneyline plays been cleaning up. 7-2 last week. The picks
+              come with reasoning too so I'm actually learning the game."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center font-bebas text-lg"
+                style="
+                  background: linear-gradient(135deg, #ffd700, #b8960c);
+                  color: #000;
+                "
+              >
+                R
+              </div>
+              <div>
+                <div class="font-semibold text-sm">RealBettsOnly</div>
+                <div class="text-xs text-gray-500">BetMGM VIP</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-card p-6 reveal">
+            <div class="flex mb-3">
+              <span class="star">★★★★★</span>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              "Fliff picks got me to Gold status fast. Hard Rock plays been
+              solid too. Worth every dollar — monthly member and not looking
+              back."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center font-bebas text-lg"
+                style="
+                  background: linear-gradient(135deg, #ffd700, #b8960c);
+                  color: #000;
+                "
+              >
+                M
+              </div>
+              <div>
+                <div class="font-semibold text-sm">MoneyMoves_M</div>
+                <div class="text-xs text-gray-500">Fliff &amp; Hard Rock</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BOTTOM -->
+    <section class="py-24 px-4 text-center relative overflow-hidden">
+      <div class="hero-glow" style="top: -50px"></div>
+      <div class="relative z-10 max-w-2xl mx-auto reveal">
+        <div class="section-label mb-4">Ready to Win?</div>
+        <h2
+          class="font-bebas text-6xl md:text-8xl mb-4"
+          style="color: var(--gold)"
+        >
+          Join the VIP Group
+        </h2>
+        <p class="text-gray-400 mb-8">
+          Games are posted openly for all VIP members. Massive odds. Real
+          results. Start with as little as $50.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <button
+            class="btn-gold text-lg px-10 py-4"
+            onclick="openModal('main')"
+          >
+            🔐 Subscribe Now
+          </button>
+          <button
+            class="btn-outline text-lg px-8 py-4"
+            onclick="openModal('pay')"
+          >
+            💳 Payment Info
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      style="background: var(--card); border-top: 1px solid var(--border)"
+      class="px-4 py-10 text-center"
+    >
+      <div class="font-bebas text-3xl mb-2" style="color: var(--gold)">
+        VIP PICKS 👑
+      </div>
+      <p class="text-gray-500 text-sm">
+        © 2026 VIP Picks. For entertainment purposes. Please bet responsibly.
+      </p>
+    </footer>
+
+    <!-- ====== SUBSCRIBE MODAL ====== -->
+    <div class="modal-overlay" id="modal-main">
+      <div class="modal-box">
+        <button
+          class="absolute top-4 right-4 text-gray-500 hover:text-white text-xl"
+          onclick="closeModal('main')"
+        >
+          ✕
+        </button>
+        <div class="font-bebas text-4xl mb-1" style="color: var(--gold)">
+          Join VIP 👑
+        </div>
+        <p class="text-gray-400 text-sm mb-6">
+          Choose your plan and payment method below.
+        </p>
+
+        <div class="space-y-3 mb-6">
+          <div
+            class="font-condensed font-bold text-xs tracking-widest uppercase text-gray-400 mb-2"
+          >
+            Select Plan
+          </div>
+          <label
+            class="flex items-center justify-between p-4 rounded-lg cursor-pointer transition-colors"
+            style="background: var(--card2); border: 1px solid var(--border)"
+            id="plan-4day"
+          >
+            <div class="flex items-center gap-3">
+              <input
+                type="radio"
+                name="plan"
+                value="4day"
+                class="accent-yellow-400"
+                onchange="highlightPlan('4day')"
+              />
+              <span class="font-semibold">4 Days</span>
+            </div>
+            <span class="font-bebas text-xl" style="color: var(--gold)"
+              >$50</span
+            >
+          </label>
+          <label
+            class="flex items-center justify-between p-4 rounded-lg cursor-pointer transition-colors"
+            style="background: var(--card2); border: 1px solid var(--border)"
+            id="plan-weekly"
+          >
+            <div class="flex items-center gap-3">
+              <input
+                type="radio"
+                name="plan"
+                value="weekly"
+                class="accent-yellow-400"
+                onchange="highlightPlan('weekly')"
+              />
+              <span class="font-semibold">Weekly</span>
+              <span
+                class="font-condensed text-xs uppercase font-bold rounded-full px-2 py-0.5"
+                style="background: var(--gold); color: #000"
+                >Popular</span
+              >
+            </div>
+            <span class="font-bebas text-xl" style="color: var(--gold)"
+              >$100</span
+            >
+          </label>
+          <label
+            class="flex items-center justify-between p-4 rounded-lg cursor-pointer transition-colors"
+            style="background: var(--card2); border: 1px solid var(--border)"
+            id="plan-monthly"
+          >
+            <div class="flex items-center gap-3">
+              <input
+                type="radio"
+                name="plan"
+                value="monthly"
+                class="accent-yellow-400"
+                onchange="highlightPlan('monthly')"
+              />
+              <span class="font-semibold">Monthly</span>
+            </div>
+            <span class="font-bebas text-xl" style="color: var(--gold)"
+              >$200</span
+            >
+          </label>
+        </div>
+
+        <div
+          class="font-condensed font-bold text-xs tracking-widest uppercase text-gray-400 mb-3"
+        >
+          Payment Method
+        </div>
+        <div class="grid grid-cols-3 gap-3 mb-6">
+          <button
+            class="pay-btn py-3 rounded-lg text-sm font-semibold transition-all"
+            style="background: var(--card2); border: 1px solid var(--border)"
+            data-method="Bitcoin"
+            onclick="selectPay(this)"
+          >
+            ₿ Bitcoin
+          </button>
+          <button
+            class="pay-btn py-3 rounded-lg text-sm font-semibold transition-all"
+            style="background: var(--card2); border: 1px solid var(--border)"
+            data-method="Apple Pay"
+            onclick="selectPay(this)"
+          >
+            🍎 Apple Pay
+          </button>
+          <button
+            class="pay-btn py-3 rounded-lg text-sm font-semibold transition-all"
+            style="background: var(--card2); border: 1px solid var(--border)"
+            data-method="Chime"
+            onclick="selectPay(this)"
+          >
+            💚 Chime
+          </button>
+        </div>
+
+        <button
+          class="btn-gold w-full py-3 text-base"
+          onclick="confirmSubscribe()"
+        >
+          Confirm & Get Payment Info
+        </button>
+      </div>
+    </div>
+
+    <!-- ====== PLAN-SPECIFIC MODAL (4-Day) ====== -->
+    <div class="modal-overlay" id="modal-4day">
+      <div class="modal-box">
+        <button
+          class="absolute top-4 right-4 text-gray-500 hover:text-white text-xl"
+          onclick="closeModal('4day')"
+        >
+          ✕
+        </button>
+        <div class="font-bebas text-4xl mb-1" style="color: var(--gold)">
+          4-Day Access — $50
+        </div>
+        <p class="text-gray-400 text-sm mb-6">
+          Perfect for testing the waters. Full VIP picks for 4 days.
+        </p>
+        <div class="space-y-2 mb-6 text-sm">
+          <div class="flex items-center gap-2">
+            <span style="color: var(--green)">✓</span> Instant group invite
+            after payment
+          </div>
+          <div class="flex items-center gap-2">
+            <span style="color: var(--green)">✓</span> Picks across all 10
+            sportsbooks
+          </div>
+          <div class="flex items-center gap-2">
+            <span style="color: var(--green)">✓</span> Massive odds plays posted
+            daily
+          </div>
+        </div>
+        <button
+          class="btn-gold w-full py-3"
+          onclick="
+            closeModal('4day');
+            openModal('main');
+            preselectPlan('4day');
+          "
+        >
+          Select This Plan →
+        </button>
+      </div>
+    </div>
+
+    <!-- ====== PLAN-SPECIFIC MODAL (Weekly) ====== -->
+    <div class="modal-overlay" id="modal-weekly">
+      <div class="modal-box">
+        <button
+          class="absolute top-4 right-4 text-gray-500 hover:text-white text-xl"
+          onclick="closeModal('weekly')"
+        >
+          ✕
+        </button>
+        <div class="font-bebas text-4xl mb-1" style="color: var(--gold)">
+          Weekly Access — $100
+        </div>
+        <p class="text-gray-400 text-sm mb-6">
+          7 days of premium picks. Most popular plan for a reason.
+        </p>
+        <div class="space-y-2 mb-6 text-sm">
+          <div class="flex items-center gap-2">
+            <span style="color: var(--green)">✓</span> Full week of VIP picks
+          </div>
+          <div class="flex items-center gap-2">
+            <span style="color: var(--green)">✓</span> Parlays, props &
+            moneylines
+          </div>
+          <div class="flex items-center gap-2">
+            <span style="color: var(--green)">✓</span> Priority chat support
+          </div>
+          <div class="flex items-center gap-2">
+            <span style="color: var(--green)">✓</span> All 10 sportsbooks
+            covered
+          </div>
+        </div>
+        <button
+          class="btn-gold w-full py-3"
+          onclick="
+            closeModal('weekly');
+            openModal('main');
+            preselectPlan('weekly');
+          "
+        >
+          Select This Plan →
+        </button>
+      </div>
+    </div>
+
+    <!-- ====== PLAN-SPECIFIC MODAL (Monthly) ====== -->
+    <div class="modal-overlay" id="modal-monthly">
+      <div class="modal-box">
+        <button
+          class="absolute top-4 right-4 text-gray-500 hover:text-white text-xl"
+          onclick="closeModal('monthly')"
+        >
+          ✕
+        </button>
+        <div class="font-bebas text-4xl mb-1" style="color: var(--gold)">
+          Monthly Access — $200
+        </div>
+        <p class="text-gray-400 text-sm mb-6">
+          Full month of picks. Best ROI for serious bettors.
+        </p>
+        <div class="space-y-2 mb-6 text-sm">
+          <div class="flex items-center gap-2">
+            <span style="color: var(--green)">✓</span> 30 full days of VIP picks
+          </div>
+          <div class="flex items-center gap-2">
+            <span style="color: var(--green)">✓</span> 1-on-1 pick breakdowns
+          </div>
+          <div class="flex items-center gap-2">
+            <span style="color: var(--green)">✓</span> VIP inner circle group
+            access
+          </div>
+          <div class="flex items-center gap-2">
+            <span style="color: var(--green)">✓</span> Exclusive high-odds plays
+            only for monthly
+          </div>
+        </div>
+        <button
+          class="btn-gold w-full py-3"
+          onclick="
+            closeModal('monthly');
+            openModal('main');
+            preselectPlan('monthly');
+          "
+        >
+          Select This Plan →
+        </button>
+      </div>
+    </div>
+
+    <!-- ====== PAYMENT INFO MODAL ====== -->
+    <div class="modal-overlay" id="modal-pay">
+      <div class="modal-box">
+        <button
+          class="absolute top-4 right-4 text-gray-500 hover:text-white text-xl"
+          onclick="closeModal('pay')"
+        >
+          ✕
+        </button>
+        <div class="font-bebas text-4xl mb-1" style="color: var(--gold)">
+          Payment Info 💳
+        </div>
+        <p class="text-gray-400 text-sm mb-6">
+          Send payment via any of these methods, then DM your receipt to get
+          added instantly.
+        </p>
+        <div class="space-y-4">
+          <div
+            class="p-4 rounded-lg"
+            style="background: var(--card2); border: 1px solid var(--border)"
+          >
+            <div
+              class="font-condensed font-bold tracking-widest uppercase text-xs text-gray-400 mb-1"
+            >
+              ₿ Bitcoin
+            </div>
+            <div class="text-sm text-white font-mono break-all" id="btc-addr">
+              Add your BTC wallet address here
+            </div>
+            <button
+              class="btn-outline mt-2 px-4 py-1.5 text-xs"
+              onclick="copyText('btc-addr')"
+            >
+              Copy Address
+            </button>
+          </div>
+          <div
+            class="p-4 rounded-lg"
+            style="background: var(--card2); border: 1px solid var(--border)"
+          >
+            <div
+              class="font-condensed font-bold tracking-widest uppercase text-xs text-gray-400 mb-1"
+            >
+              🍎 Apple Pay
+            </div>
+            <div class="text-sm text-white" id="apple-info">
+              Add your Apple Pay phone number / email here
+            </div>
+            <button
+              class="btn-outline mt-2 px-4 py-1.5 text-xs"
+              onclick="copyText('apple-info')"
+            >
+              Copy Info
+            </button>
+          </div>
+          <div
+            class="p-4 rounded-lg"
+            style="background: var(--card2); border: 1px solid var(--border)"
+          >
+            <div
+              class="font-condensed font-bold tracking-widest uppercase text-xs text-gray-400 mb-1"
+            >
+              💚 Chime
+            </div>
+            <div class="text-sm text-white" id="chime-tag">
+              Add your $ChimeTag here
+            </div>
+            <button
+              class="btn-outline mt-2 px-4 py-1.5 text-xs"
+              onclick="copyText('chime-tag')"
+            >
+              Copy Tag
+            </button>
+          </div>
+        </div>
+        <p class="text-gray-500 text-xs mt-4 text-center">
+          After sending, DM your payment screenshot to be added to the VIP
+          group.
+        </p>
+      </div>
+    </div>
+
+    <!-- ====== CONFIRM MODAL ====== -->
+    <div class="modal-overlay" id="modal-confirm">
+      <div class="modal-box text-center">
+        <div class="text-5xl mb-4">👑</div>
+        <div class="font-bebas text-4xl mb-2" style="color: var(--gold)">
+          Welcome to VIP!
+        </div>
+        <p class="text-gray-300 text-sm mb-2" id="confirm-msg">
+          Send your payment and DM your receipt.
+        </p>
+        <div
+          class="p-4 rounded-lg mb-4 text-left"
+          style="background: var(--card2); border: 1px solid var(--border)"
+        >
+          <div id="confirm-details" class="text-sm space-y-1"></div>
+        </div>
+        <button class="btn-gold w-full py-3" onclick="closeModal('confirm')">
+          Got It — I'll Send Payment ✅
+        </button>
+      </div>
+    </div>
+
+    <script src="/main.js">
+      // ============ MODAL LOGIC ============
+    </script>
+  </body>
+</html>
